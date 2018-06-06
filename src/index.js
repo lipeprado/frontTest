@@ -7,7 +7,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import configureStore from "./store/configureStore";
 import App from "./components/App";
 import "jquery/dist/jquery";
-import "css-reset-and-normalize-sass";
 import "./static/styles/global.sass";
 
 const store = configureStore();

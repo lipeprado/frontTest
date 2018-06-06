@@ -2,17 +2,20 @@
 @import './colors.sass'
 @import './dimens.sass'
 
-body
-  font-size: 14px
-  background-color: $background
-  height: 100vh
-  padding: 2rem
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  align-content: flex-start
-  justify-content: space-between
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: inherit
 
+html
+  box-sizing: border-box
+  font-size: 62.5% // means 1rem will be equal 10px
+
+body
+  background-color: $background
+ 
 h1, h2, h3, h4
   font-family: "Montserrat-medium"
   color: $details
