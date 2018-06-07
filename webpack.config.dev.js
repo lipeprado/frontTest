@@ -40,6 +40,12 @@ export default {
         exclude: [/src/]
       },
       {
+        test: /\.(sass|scss|css)/,
+        use: ["style-loader?sourceMap", "css-loader", "sass-loader"],
+        exclude: [/node_modules/],
+        include: [/src/]
+      },
+      {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file-loader"
       },

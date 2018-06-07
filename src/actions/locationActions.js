@@ -4,8 +4,8 @@ export const getHostLocationRequest = () => {
   return { type: types.GET_LOCATION_REQUEST };
 };
 
-export const getHostLocation = host => {
-  return async dispatch => {
+export const getHostLocation = () => {
+  return () => {
     try {
       console.log("Teste");
     } catch (error) {
