@@ -1,23 +1,38 @@
 /*eslint-disable import/default*/
 import 'babel-polyfill';
 import React from 'react';
-import {Provider} from 'react-redux';
-import {render} from 'react-dom';
-import {Router} from 'react-router';
-import {createBrowserHistory} from 'history';
-import configureStore from './store/configureStore';
-import routes from './routes';
+import jwtDecode from 'jwt-decode';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { axios } from './utils';
+import { onValidAuth } from './actions/AuthActions';
+
+import App from './components/App';
 import './static/styles/global.scss';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap';
+import configureStore from './store/configureStore';
 
 const store = configureStore();
 
+bootstrap();
+function bootstrap() {
+  if (localStorage['TOKEN_NAME']) {
+    let user = localStorage.getItem('TOKEN_NAME');
+    let decodeUser = jwtDecode(user);
+
+    // if Token is not valid redirect to '/login'
+
+    // verify if token is valid and search for user in database
+    axios.setAuthToken(localStorage['TOKEN_NAME']);
+    store.dispatch(onValidAuth(decodeUser));
+  }
+}
+
 render(
-  <Provider store={store}>
-    <Router history={createBrowserHistory()}>
-      {routes}
-    </Router>
-  </Provider>,
-  document.getElementById('app')
+  <BrowserRouter>
+    <Provider store={store}>
+      <Route component={App} />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('app'),
 );

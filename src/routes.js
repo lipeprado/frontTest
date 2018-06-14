@@ -1,9 +1,9 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import { Route } from 'react-router-dom';
 import App from './components/App';
 import SearchContainer from './components/github/search/SearchContainer';
 
-export default(
+export default (
   <App>
     <Route exact path="/" component={SearchContainer} />
   </App>

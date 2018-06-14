@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as githubActions from '../../../actions/githubActions';
 import Search from './Search';
 
@@ -10,19 +10,19 @@ class SearchContainer extends React.Component {
     super(props, context);
 
     this.state = {
-      searchTerm: ""
+      searchTerm: '',
     };
 
     this.onSearch = this.onSearch.bind(this);
     this.onSearchTermChange = this.onSearchTermChange.bind(this);
   }
 
-  onSearch(e) {
+  onSearch() {
     this.props.actions.searchGitHubUsers(this.state.searchTerm);
   }
 
   onSearchTermChange(e) {
-    this.setState({searchTerm: e.target.value});
+    this.setState({ searchTerm: e.target.value });
   }
 
   render() {
@@ -42,16 +42,19 @@ SearchContainer.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
-    users: state.github.users
+    users: state.github.users,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(githubActions, dispatch)
+    actions: bindActionCreators(githubActions, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchContainer);

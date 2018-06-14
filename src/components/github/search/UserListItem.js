@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './search.scss';
 
-const UserListItem = ({user}) => {
+const UserListItem = ({ user }) => {
   return (
     <div className={styles.card}>
       <img className={styles.cardImage} src={user.avatar_url} />
@@ -13,7 +13,9 @@ const UserListItem = ({user}) => {
         <a
           href={user.html_url}
           className={`btn btn-primary ${styles.userPageButton}`}
-          target="_blank">User's Page</a>
+        >
+          Users Page
+        </a>
       </div>
       <div className="clearfix" />
     </div>
@@ -21,7 +23,7 @@ const UserListItem = ({user}) => {
 };
 
 UserListItem.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
 
 export default UserListItem;

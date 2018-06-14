@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 const Header = () => {
   return (
     <nav className="navbar navbar-inverse bg-inverse">
       <div className="container">
-        <Link className="navbar-brand" to="/">Home</Link>
+        <div className="navbar-brand" onClick={() => console.log("Teste")}>Home</div>
       </div>
     </nav>
   );

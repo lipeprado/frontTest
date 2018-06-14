@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({onChange, value, tooltip, onSearch}) => {
-  const getInputRef = (input) => {
-    $(input).tooltip();
-  };
+const SearchBar = ({ onChange, value, tooltip, onSearch }) => {
+
   return (
     <div className="form-inline">
       <input
-        ref={getInputRef}
         className="form-control mb-2 mr-sm-2 mb-sm-0"
         type="text"
         onChange={onChange}
@@ -17,7 +14,9 @@ const SearchBar = ({onChange, value, tooltip, onSearch}) => {
         data-placement="top"
         title={tooltip}
       />
-      <button className="btn btn-primary" onClick={onSearch}>Search</button>
+      <button className="btn btn-primary" onClick={onSearch}>
+        Search
+      </button>
     </div>
   );
 };
