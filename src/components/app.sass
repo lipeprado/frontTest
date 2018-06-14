@@ -1,0 +1,41 @@
+@import '../static/styles/colors'
+
+.container
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: $background
+
+.container__header
+  padding: .4rem 0
+  font-size: 6rem
+
+.wrapper_features
+  padding: 2rem
+
+.features
+  color: $main_color
+  font-family: "Montserrat-Bold"
+  font-size: 1.8rem
+  margin: 0 4rem
+  position: relative
+  &:nth-of-type(even)
+    &:before
+      content: ''
+      width: 2px
+      height: 100%
+      background-color: $main_color
+      position: absolute
+      top: 0
+      right: -4rem
+    &:after
+      content: ''
+      width: 2px
+      height: 100%
+      background-color: $main_color
+      position: absolute
+      top: 0
+      left: -4rem
+    

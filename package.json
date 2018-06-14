@@ -1,7 +1,7 @@
 {
-  "name": "front-creditor",
+  "name": "boileplate",
   "version": "1.0.0",
-  "description": "A Onidata Product",
+  "description": "A Simple React Redux Boilerplate",
   "main": "index.js",
   "author": "Filipe Prado",
   "license": "ISC",
