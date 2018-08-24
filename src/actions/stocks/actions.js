@@ -1,6 +1,8 @@
 import { STOCKAPI } from "../../utils";
 import * as types from "./types";
 
+// getLatestPrice
+
 export const getLatestPriceRequest = () => {
   return { type: types.GET_LATEST_PRICE_REQUEST };
 };
@@ -12,12 +14,11 @@ export const getLatestPriceFailed = () => {
 };
 
 export const getLatestPrice = symbol => {
-  return dispatch => {
+  return async dispatch => {
     try {
-      // dispatch(getLatestPriceRequest());
-      const response = STOCKAPI.get(`stock/${symbol}/quote`);
-      debugger;
-      dispatch(getLatestPriceSuccess(response));
+      dispatch(getLatestPriceRequest());
+      const response = await STOCKAPI.get(`stock/${symbol}/quote`);
+      dispatch(getLatestPriceSuccess(response.data));
     } catch (error) {
       dispatch(getLatestPriceFailed(error));
     }
