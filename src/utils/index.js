@@ -1,3 +1,2 @@
-import * as axios from './axios';
-
-export { axios };
+export { STOCKAPI, setAxiosDefaults, clearAxiosDefaults } from "./axios";
+export { BASEURL } from "./constants";
