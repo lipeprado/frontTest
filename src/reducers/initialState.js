@@ -1,8 +1,15 @@
 export default {
   stocks: {
-    latest: {
-      company: undefined,
-      value: undefined
-    }
+    isFetching: false,
+    symbol_info: {},
+    latest_price: 0
+  },
+  company: {
+    isFetchingCompany: false,
+    info: {}
+  },
+  chart: {
+    data: [],
+    isFetchingChart: false
   }
 };
