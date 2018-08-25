@@ -5,19 +5,20 @@ import { WrapperHead, InnerHead, Logo } from "./styled";
 
 import SearchCompany from "../Search/SearchCompany";
 
-const Header = ({ _handleSubmit }) => {
+const Header = ({ _handleSubmit, onClear }) => {
   return (
     <WrapperHead>
       <InnerHead>
         <Logo src={logo} />
-        <SearchCompany onSubmit={_handleSubmit} />
+        <SearchCompany onClear={onClear} onSubmit={_handleSubmit} />
       </InnerHead>
     </WrapperHead>
   );
 };
 
 Header.propTypes = {
-  _handleSubmit: PropTypes.func.isRequired
+  _handleSubmit: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired
 };
 
 export default Header;

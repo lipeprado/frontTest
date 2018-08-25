@@ -18,13 +18,13 @@ class StockContainer extends Component {
     symbol: ""
   };
 
-  _handleSubmit = symbol => {
+  _handleSubmit = async symbol => {
     const { actions } = this.props;
     this.setState({
       symbol,
       setInfoView: false
     });
-    actions.getLatestPrice(symbol);
+    await actions.getLatestPrice(symbol);
   };
 
   _handleView = () => {
@@ -34,6 +34,14 @@ class StockContainer extends Component {
       setInfoView: true
     });
     actions.getCompanyInfo(symbol);
+  };
+
+  _handleClear = () => {
+    const { actions } = this.props;
+    actions.clear();
+    this.setState({
+      setInfoView: false
+    });
   };
   render() {
     const {
@@ -46,7 +54,10 @@ class StockContainer extends Component {
     const { setInfoView } = this.state;
     return (
       <div>
-        <Header _handleSubmit={this._handleSubmit} />
+        <Header
+          _handleSubmit={this._handleSubmit}
+          onClear={this._handleClear}
+        />
         {isFetching ? (
           <Loader />
         ) : !setInfoView ? (

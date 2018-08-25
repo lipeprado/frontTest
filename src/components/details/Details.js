@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import FontAwesome from "react-fontawesome";
 
-import { WrapperDetails, InfoCard, SymbolDetails } from "./styled";
+import {
+  WrapperDetails,
+  InfoCard,
+  SymbolDetails,
+  WelcomeScreen,
+  WelcomeTitle
+} from "./styled";
 
 class Details extends Component {
   render() {
@@ -34,7 +40,12 @@ class Details extends Component {
               </InfoCard>
             </Fragment>
           ) : (
-            <h3>Search for Companys</h3>
+            <WelcomeScreen>
+              <WelcomeTitle>
+                Here you can find more about Company stocks
+              </WelcomeTitle>
+              <FontAwesome name="smile-o" />
+            </WelcomeScreen>
           )}
         </WrapperDetails>
         {hasPrice && (

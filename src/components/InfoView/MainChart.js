@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 import {
   LineChart,
   Line,
+  CartesianGrid,
+  Legend,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
+  Tooltip
 } from "recharts";
 
 // Actions
@@ -33,6 +33,17 @@ class MainChart extends Component {
     const { viewChart } = this.state;
     const { data, isFetchingChart } = this.props;
 
+    const chartData = data.map(d => {
+      return {
+        name: d.label,
+        uv: d.open,
+        pv: d.close,
+        low: d.low,
+        high: d.high,
+        change: d.change
+      };
+    });
+
     return (
       <WrapperChart>
         {!viewChart && (
@@ -41,14 +52,23 @@ class MainChart extends Component {
           </ButtonLoadChart>
         )}
         {viewChart && (
-          <Fragment>
-            <LineChart
-              width={600}
-              height={300}
-              data={data}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            />
-          </Fragment>
+          <LineChart
+            width={730}
+            height={400}
+            data={chartData}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <Tooltip />
+            <Legend verticalAlign="top" height={36} />
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" domain={["dataMin", "dataMax"]} />
+            <YAxis />
+            <Line type="monotone" dataKey="pv" stroke="#ff1300" />
+            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="amt" stroke="#fdd692" />
+            <Line type="monotone" dataKey="high" stroke="#ac7357" />
+            <Line type="monotone" dataKey="change" stroke="#4c00c0" />
+          </LineChart>
         )}
       </WrapperChart>
     );

@@ -6,6 +6,24 @@ export const WrapperDetails = styled.section`
   padding: 4rem 3rem;
 `;
 
+export const WelcomeScreen = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 6rem 3rem 3rem 3rem;
+  span {
+    font-size: 4rem;
+    color: #4c00c0;
+  }
+`;
+
+export const WelcomeTitle = styled.h2`
+  color: #4c00c0;
+  font-size: 2rem;
+  font-family: inherit;
+`;
 export const InfoCard = styled.div`
   padding: 2rem 2.5rem;
   background-color: #fff;

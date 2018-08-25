@@ -1,5 +1,24 @@
 import styled from "styled-components";
 
+export const WelcomeScreen = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 6rem 3rem 3rem 3rem;
+  span {
+    font-size: 4rem;
+    color: #4c00c0;
+  }
+`;
+
+export const WelcomeTitle = styled.h2`
+  color: #4c00c0;
+  font-size: 2rem;
+  font-family: inherit;
+`;
+
 export const Wrapper = styled.section`
   display: flex;
   padding: 1rem 3rem;
@@ -63,7 +82,7 @@ export const Tag = styled.span`
 
 export const WrapperChart = styled.div`
   display: flex;
-  padding: 1rem 3rem;
+  padding: 4rem 3rem 0 3rem;
   width: 100%;
   justify-content: center;
   align-items: center;

@@ -8,7 +8,7 @@ export const WrapperSearch = styled.div`
 export const TextInput = styled.input`
   padding: 1rem;
   border: 1px solid #4c00c0;
-  min-width: 15rem;
+  min-width: 25rem;
   &:focus {
     border-color: #4c00c0;
   }
@@ -16,10 +16,11 @@ export const TextInput = styled.input`
 
 export const OKButton = styled.div`
   padding: 1rem;
-  background-color: #4c00c0;
+  background-color: ${props => (props.clear ? "#EC6A5C" : "#4c00c0")};
   color: white;
   cursor: pointer;
+  margin-right: 0.4rem;
   &:hover {
-    background-color: #4c00d3;
+    background-color: ${props => (props.clear ? "#EC6A6C " : "#4c00d3")};
   }
 `;

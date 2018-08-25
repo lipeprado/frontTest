@@ -16,7 +16,7 @@ export const getChartData = symbol => {
   return async dispatch => {
     try {
       dispatch(getChartDataRequest());
-      const response = await STOCKAPI.get(`stock/${symbol}/chart`);
+      const response = await STOCKAPI.get(`stock/${symbol}/chart/1m`);
       dispatch(getChartDataSuccess(response.data));
     } catch (error) {
       dispatch(getChartDataFailed(error));
