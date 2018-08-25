@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
@@ -31,7 +31,7 @@ class MainChart extends Component {
   };
   render() {
     const { viewChart } = this.state;
-    const { data, isFetchingChart } = this.props;
+    const { data } = this.props;
 
     const chartData = data.map(d => {
       return {
@@ -77,13 +77,13 @@ class MainChart extends Component {
 
 MainChart.propTypes = {
   actions: PropTypes.object.isRequired,
-  symbol: PropTypes.string
+  symbol: PropTypes.string,
+  data: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
   return {
-    data: state.chart.data,
-    isFetchingChart: state.chart.isFetchingChart
+    data: state.chart.data
   };
 };
 

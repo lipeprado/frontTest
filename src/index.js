@@ -4,10 +4,10 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import toastr from "toastr";
-import App from "./components/App";
-import "./static/styles/global.scss";
 import "toastr/build/toastr.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import App from "./components/App";
+import "./static/styles/global.scss";
 import configureStore from "./store/configureStore";
 
 const store = configureStore();

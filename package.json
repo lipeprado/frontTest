@@ -66,6 +66,7 @@
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
     "lint": "^1.1.2",
+    "lodash": "^4.17.10",
     "mini-css-extract-plugin": "^0.4.0",
     "moment": "^2.22.1",
     "node-sass": "^4.9.0",

@@ -40,7 +40,11 @@ class InfoView extends Component {
                 )}
               </InfoItem>
               <InfoItem>
-                <a href={info.website} target="_blank">
+                <a
+                  href={info.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {info.website}
                 </a>
               </InfoItem>

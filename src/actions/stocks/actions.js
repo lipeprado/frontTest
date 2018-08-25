@@ -1,6 +1,6 @@
+import toastr from "toastr";
 import { STOCKAPI } from "../../utils";
 import * as types from "./types";
-import toastr from "toastr";
 
 // getLatestPrice
 
