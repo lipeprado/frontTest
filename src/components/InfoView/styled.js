@@ -91,4 +91,14 @@ export const WrapperChart = styled.div`
 export const ButtonLoadChart = styled.div`
   display: flex;
   padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px dotted #cccccc;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    color: #4c00c0;
+    border: 1px dotted #4c00c0;
+  }
 `;
