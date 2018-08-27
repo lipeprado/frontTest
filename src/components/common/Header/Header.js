@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import logo from "../../../static/images/logo.svg";
+import logo from "../../../static/images/logo.png";
 import { WrapperHead, InnerHead, Logo } from "./styled";
 
 import SearchCompany from "../Search/SearchCompany";
